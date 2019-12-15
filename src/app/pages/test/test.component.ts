@@ -20,6 +20,14 @@ export class TestComponent implements OnInit {
     private restService: RESTclientService
   ) { }
 
+  addFourtyTwo(num: number) {
+    return num + 42;
+  }
+
+  concatHey(word: string) {
+    return word + 'hey';
+  }
+
   testNameUpdate() {
     this.name.setValue('Nancy');
   }

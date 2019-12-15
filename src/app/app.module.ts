@@ -21,6 +21,8 @@ import { PostItComponent } from './pages/noticeboard/post-it/post-it.component';
 import { CreateNoticeComponent } from './pages/create-notice/create-notice.component';
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RESTclientService } from 'src/REST/restclient.service';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
     MatButtonModule, // Vgm niet nodig ivm material module
   ],
   providers: [
-    CookieService
+    CookieService,
+    RESTclientService, // klopt dit?
+    // {provide: APP_BASE_HREF, useValue: '/'} // Karma related addition
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
