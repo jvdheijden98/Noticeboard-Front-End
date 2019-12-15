@@ -1,0 +1,13 @@
+language: node_js
+
+addons:
+  chrome: stable
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 34d228c3874cf5078acefa58ae8f45da17de802e  # Set in the settings page of your repository, as a secure variable $GITHUB_TOKEN
+  keep_history: true
+  local-dir: ./dist/products/
+  on:
+    branch: master
