@@ -1,0 +1,19 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 10%;
+}
+
+label{
+  display: inline-block;
+  clear: left;
+  width: 350px;
+  text-align: right;
+  margin-right: 9%;
+}
+input {
+display: inline-block;
+margin-right: 9%;
+}

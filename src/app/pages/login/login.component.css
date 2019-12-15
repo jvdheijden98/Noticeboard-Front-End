@@ -1,0 +1,43 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 10%;
+}
+
+label{
+  display: inline-block;
+  clear: left;
+  width: 350px;
+  text-align: right;
+  margin-right: 8%;
+}
+input {
+display: inline-block;
+margin-right: 8%;
+}
+
+
+/* Not sure what this was */
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,47 @@
+<p>test works!</p>
+
+
+<p>{{testString}}</p>
+
+
+<!-- <form>
+  Favourite number<br>
+  <input type="text" name="number" value="">
+  <br>
+  Favourite word:<br>
+  <input type="text" name="string" value="">
+  <br><br>
+  <input type="submit" value="Submit" (click)="addTest()">
+</form> -->
+
+<br>
+<br>
+<br>
+
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+</label>
+<p>
+  <button (click)="testNameUpdate()">Update Name</button>
+</p>
+ <!-- {{ name.value }} -->
+
+
+ <br>
+ <br>
+ <br>
+
+<form [formGroup]="testObjectForm" (ngSubmit)="onSubmit()">
+  <label>
+    Favourite Number:
+    <input type="text" formControlName="getal">
+  </label>
+  <br>
+  <label>
+    Favourite Word:
+    <input type="text" formControlName="woord">
+  </label>
+  <br>
+  <button type="submit" [disabled]="!testObjectForm.valid">Submit</button>
+</form>

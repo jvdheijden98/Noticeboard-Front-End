@@ -1,0 +1,9 @@
+<h1 class="BoardTitle"> Noticeboard One </h1>
+<div class="button">
+    <a mat-stroked-button routerLink="/new" routerLinkActive="router-link-active">Create New Notice</a>
+</div>
+<ul *ngFor="let notice of noticeList">
+
+    <app-post-it [title] = "notice.title" [description] = "notice.description"></app-post-it>
+
+</ul>

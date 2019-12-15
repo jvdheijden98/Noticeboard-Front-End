@@ -1,0 +1,36 @@
+<div class="center">
+  <h3>Registration</h3>
+<form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
+  <div>
+  <label>
+    Username:
+    <input type="text" formControlName="username">
+  </label>
+</div>
+<div>
+  <br>
+  <label>
+    Password:
+    <input type="password" formControlName="password">
+  </label>
+</div>
+  <br>
+  <div>
+  <label>
+    Comfirm Password:
+    <input type="password" formControlName="comfirmPassword">
+  </label>
+</div>
+  <br/>
+  <div>
+  <button type="submit" [disabled]="!RegisterForm.valid">Submit</button>
+</div>
+</form>
+
+
+<br/>
+<br/>
+
+{{ information }}
+
+</div>

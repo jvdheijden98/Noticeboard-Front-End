@@ -1,0 +1,27 @@
+
+<div class="center">
+    <h3>Login</h3>
+<form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+    <div><label>
+      Username:
+      <input type="text" formControlName="username">
+    </label>
+  </div>
+    <br>
+    <div>
+    <label>
+      Password:
+      <input type="text" formControlName="password">
+    </label>
+  </div>
+  <br>
+  <div>
+    <button mat-stroked-button type="submit" [disabled]="!LoginForm.valid">Submit</button>
+  </div>
+  </form>
+<br>
+<br>
+<p> Don't have an account yet? Click <a routerLink="/register" routerLinkActive="router-link-active">here</a></p>
+{{ information }}
+
+</div>
