@@ -8,9 +8,21 @@
     <a>&nbsp;&nbsp;</a>
     <a mat-button routerLink="/noticeboard" routerLinkActive="router-link-active">Noticeboard</a>
     <a>&nbsp;&nbsp;</a>
+
+    <div *ngIf="!isLive() else elseBlock">
     <a mat-button routerLink="/test" routerLinkActive="router-link-active">Test</a>
     <a>&nbsp;&nbsp;</a>
-    <a mat-button routerLink="/login" routerLinkActive="router-link-active">Login</a>
+    </div>
 
+    <ng-template #elseBlock>
+    </ng-template>
+
+    <a mat-button routerLink="/login" routerLinkActive="router-link-active">Login</a>
+    <!-- <div *ngIf="!isLoggedIn() else elseBlock2">
+    <a mat-button routerLink="/login" routerLinkActive="router-link-active">Login</a>
+    </div>
+    <ng-template #elseBlock2>
+    <a mat-button routerlink="/wip" routerLinkActive="router-link-active">{{username}}</a>
+    </ng-template> -->
   </span>
 </mat-toolbar>

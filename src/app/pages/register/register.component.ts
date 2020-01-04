@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { RESTclientService } from 'src/REST/restclient.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,8 @@ export class RegisterComponent implements OnInit {
 
     constructor(
       private cookieService: CookieService,
-      private restService: RESTclientService
+      private restService: RESTclientService,
+      private router: Router,
     ) { }
 
   ngOnInit() {
@@ -45,8 +47,14 @@ export class RegisterComponent implements OnInit {
         // Todo, als inlog niet goed is (anders krijg je null token)
         this.cookieService.set('token', returnModel.uuid);
         this.information = 'Cookie has been set!';
+        this.navigateToLogin();
     } else {
       this.information = 'Something went wrong! - Please try again';
     }
   }
+
+  navigateToLogin() {
+    this.router.navigateByUrl('/login');
+  }
+
 }

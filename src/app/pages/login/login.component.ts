@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RESTclientService } from 'src/REST/restclient.service';
+import { Router } from '@angular/router';
+import { GlobalVariable } from '../../../global';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,8 @@ information = '';
 
   constructor(
     private cookieService: CookieService,
-    private restService: RESTclientService
+    private restService: RESTclientService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -40,6 +43,12 @@ information = '';
     // Todo, als inlog niet goed is (anders krijg je null token)
     this.cookieService.set('token', returnModel.uuid);
     this.information = 'Cookie has been set!';
+    GlobalVariable.Username = username;
+    this.navigateToHome();
+  }
+
+  navigateToHome() {
+    this.router.navigateByUrl('/noticeboard');
   }
 
 }

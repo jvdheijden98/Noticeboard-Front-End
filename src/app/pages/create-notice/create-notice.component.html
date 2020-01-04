@@ -1,17 +1,26 @@
-
+<div class="center">
+  <h3> New Notice </h3>
 <div *ngIf="isLoggedIn() else elseBlock">
 <form [formGroup]="NewNoticeForm" (ngSubmit)="onSubmit()">
+  <div>
   <label>
     Title :
     <input type="text" formControlName="title">
   </label>
   <br>
+  <br>
+</div>
+<div>
   <label>
     Description :
     <input type="text" formControlName="description">
   </label>
   <br>
+  <br>
+</div>
+<div>
   <button mat-stroked-button type="submit" [disabled]="!NewNoticeForm.valid">Submit</button>
+</div>
 </form>
 </div>
 
@@ -20,3 +29,4 @@
     You have to be logged in to create a new Notice. Please Login.
   </p>
 </ng-template>
+</div>

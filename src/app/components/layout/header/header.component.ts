@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { GlobalVariable } from 'src/global';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  Live = true; // True om de test page NIET te laten zien
+  username: string;
+
+  constructor(
+    private cookieService: CookieService,
+  ) {
+    this.username = GlobalVariable.Username;
+   }
 
   ngOnInit() {
+
   }
 
+  isLoggedIn() {
+    if (this.cookieService.check('token')) {
+      return true;
+    }
+  }
+
+  isLive() {
+    return this.isLive;
+  }
 }
